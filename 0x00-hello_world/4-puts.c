@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-/*
- * prints exactly with proper grammar, but the outcome is a piece of art,
- * main void() -- entry point
- * only use puts function
- * return 0;
+/**
+ * main - Entry Point
+ *
+ * Describe: Print message using puts function
+ * 
+ * Return: Always 0 (Success)
  */
 
 int main(void)
-
 {
-puts("\"Programming is like building a multilingual puzzle");
-return (0);
+  puts("\"Programming is like building a multilingual puzzle");
+  return (0);
 }
