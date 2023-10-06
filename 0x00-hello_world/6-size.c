@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - main Entry
- * Describe: Sizeof varios type 
+ * Describe: Sizeof various type
  * Return: Always 0 (Success)
  */
 int main(void)
