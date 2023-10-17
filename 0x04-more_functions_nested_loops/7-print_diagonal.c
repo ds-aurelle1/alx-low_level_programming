@@ -3,8 +3,8 @@
 *print_diagonal - prints a diagonal
 *@n:parameter
 *Return: void
-
 */
+
 void print_diagonal(int n)
 {
 int len, space;
