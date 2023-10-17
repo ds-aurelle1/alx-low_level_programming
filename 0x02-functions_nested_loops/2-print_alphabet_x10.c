@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * void print_alphabet_x10 - print alphabet in lowecase 1 times
+ * print_alphabet_x10 - print alphabet in lowecase 1 times
  * return:0
  */
 
