@@ -16,6 +16,6 @@ while (i <= 8)
 putchar(l[i]);
 i++;
 }
-putchar(8)
+putchar(8);
 return (0);
 }
