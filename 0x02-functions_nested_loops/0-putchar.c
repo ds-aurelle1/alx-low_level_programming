@@ -16,6 +16,5 @@ while (i < 9)
 putchar(l[i]);
 i++;
 }
-putchar('\n');
 return (0);
 }
