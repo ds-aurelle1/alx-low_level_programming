@@ -11,11 +11,11 @@ int main(void)
 char l[8] = "_putchar";
 int i = 0;
 
-while (i <= 8)
+while (i < 8)
 {
-putchar(l[i]);
+_putchar(l[i]);
 i++;
 }
-putchar('\n');
+_putchar('\n');
 return (0);
 }
