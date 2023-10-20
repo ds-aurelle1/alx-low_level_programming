@@ -16,6 +16,6 @@ while (i < 9)
 putchar(l[i]);
 i++;
 }
-printf('\n');
+putchar('\n');
 return (0);
 }
