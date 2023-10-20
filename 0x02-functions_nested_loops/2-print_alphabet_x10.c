@@ -20,5 +20,4 @@ _putchar(i);
 i++;
 }
 
-printf('\n');
 }
