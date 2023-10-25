@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
 *cap_string - function that capitalize first character of a word
@@ -7,29 +6,29 @@
 *Return:returns the capitalized string
 */
 
-char *cap_string(char *str)
+char *cap_string(char *stri)
 {
 int index = 0;
 
-while (str[++index])
+while (stri[++index])
 {
-while (!(str[index] >= 'a' && str[index] <= 'z'))
+while (!(stri[index] >= 'a' && stri[index] <= 'z'))
 index++;
 
-if (str[index - 1] == ' ' ||
-str[index - 1] == '\t' ||
-str[index - 1] == '\n' ||
-str[index - 1] == ',' ||
-str[index - 1] == ';' ||
-str[index - 1] == '.' ||
-str[index - 1] == '!' ||
-str[index - 1] == '?' ||
-str[index - 1] == '"' ||
-str[index - 1] == '(' ||
-str[index - 1] == ')' ||
-str[index - 1] == '{' ||
-str[index - 1] == '}')
-str[index] -= 32;
+if (stri[index - 1] == ' ' ||
+stri[index - 1] == '\t' ||
+stri[index - 1] == '\n' ||
+stri[index - 1] == ',' ||
+stri[index - 1] == ';' ||
+stri[index - 1] == '.' ||
+stri[index - 1] == '!' ||
+stri[index - 1] == '?' ||
+stri[index - 1] == '"' ||
+stri[index - 1] == '(' ||
+stri[index - 1] == ')' ||
+stri[index - 1] == '{' ||
+stri[index - 1] == '}')
+stri[index] -= 32;
 }
-return (str);
+return (stri);
 }
