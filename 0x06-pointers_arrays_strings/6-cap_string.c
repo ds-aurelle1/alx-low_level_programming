@@ -1,4 +1,5 @@
 #include "main.h"
+#include <ctype.h>
 
 /**
 *cap_string - function that capitalize first character of a word
@@ -6,30 +7,34 @@
 *Return:returns the capitalized string
 */
 
-char *cap_string(char *str)
+char* cap_string(char* str) 
 {
-int index = 0;
+	int i = 0;
+	int capitalize = 1; /* Flag to indicate if the next character should be capitalized */
 
-while (str[++index])
-{
-while (!(str[index] >= 'a' && str[index] <= 'z'))
-index++;
-	
-if (str[index - 1] == ' ' ||
-str[index - 1] == '\t' ||
-str[index - 1] == '\n' ||
-str[index - 1] == ',' ||
-str[index - 1] == ';' ||
-str[index - 1] == '.' ||
-str[index - 1] == '!' ||
-str[index - 1] == '?' ||
-str[index - 1] == '"' ||
-str[index - 1] == '(' ||
-str[index - 1] == ')' ||
-str[index - 1] == '{' ||
-str[index - 1] == '}')
-str[index] -= 32;
+    for (i = 0; str[i] != '\0'; i++) 
+    {
+        if(str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == ',' ||
+           str[i] == ';' || str[i] == '.' || str[i] == '!' || str[i] == '?' ||
+           str[i] == '"' || str[i] == '(' || str[i] == ')' || str[i] == '{' ||
+           str[i] == '}') 
+	{
+            capitalize = 1;
+        } 
+	else 
+	{
+            if (capitalize) 
+	    {
+                str[i] = toupper(str[i]);
+                capitalize = 0;
+            } 
+	    else 
+	    {
+                str[i] = tolower(str[i]);
+            }
+        }
+    }
+
+    return (str);
 }
 
-return (str);
-}
