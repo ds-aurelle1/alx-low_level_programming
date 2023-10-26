@@ -1,5 +1,4 @@
 #include "main.h"
-#include <ctype.h>
 
 /**
 *cap_string - function that capitalize first character of a word
@@ -9,31 +8,26 @@
 
 char *cap_string(char *str)
 {
-int i = 0;
-int capitalize = 1; /*say if next character should be capitalized*/
+int count = 0, i;
+int sep_words[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 
-for (i = 0; str[i] != '\0'; i++)
+if (*(str + count) >= 97 && *(str + count) <= 122)
 {
-if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == ',' ||
-str[i] == ';' || str[i] == '.' || str[i] == '!' || str[i] == '?' ||
-str[i] == '"' || str[i] == '(' || str[i] == ')' || str[i] == '{' ||
-str[i] == '}')
-{
-capitalize = 1;
+*(str + count) = *(str + count) - 32;
+count++;
 }
-else
+while (*(str + count) != '\0')
 {
-if (capitalize)
+for (i = 0; i < 13; i++)
 {
-str[i] = toupper(str[i]);
-capitalize = 0;
-}
-else
+if (*(str + count) == sep_words[i])
 {
-str[i] = tolower(str[i]);
+if ((*(str + (count + 1)) >= 97) && (*(str + (count + 1)) <= 122))
+*(str + (count + 1)) = *(str + (count + 1)) - 32;
+break;
 }
 }
+count++;
 }
 return (str);
 }
-
