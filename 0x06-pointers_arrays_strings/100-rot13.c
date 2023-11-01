@@ -1,5 +1,10 @@
 #include "main.h"
-#include <stdio.h>
+
+/**
+ * rot13 -  encodes a string using rot13 algorithm
+ * @str: string parameter function rot13 takes
+ * Return: sting pointer modified or encoded
+ */
 
 char *rot13(char *str)
 {
