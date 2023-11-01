@@ -9,20 +9,17 @@
 
 char *rot13(char *str)
 {
-int i = 0;
-
-while (str[i])
+char *orig_str = str;
+while (*str)
 {
-if ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
+char base = (*str >= 'a' &&
+		*str <= 'z') ? 'a' : (*str >= 'A' &&
+			*str <= 'Z') ? 'A' : 0;
+if (base)
 {
-str[i] += 13;
+*str = (((*str - base + 13) % 26) + base);
 }
-else if ((str[i] >= 'n' && str[i] <= 'z') || (str[i] >= 'N' && str[i] <= 'Z'))
-{
-str[i] -= 13;
+str++;
 }
-i++;
-}
-
-return (str);
+return (orig_str);
 }
