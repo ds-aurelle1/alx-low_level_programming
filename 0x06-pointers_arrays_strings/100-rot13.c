@@ -9,19 +9,24 @@
 
 char *rot13(char *str)
 {
-char *p = str;
-
-while (*p) 
+char aa[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char bb[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+int i = 0;
+while (str[i])
 {
-char shift = (*p >= 'a' && *p <= 'z') ? 'a' : 'A';
-
-while ((*p >= shift && *p <= (shift + 12)) || 
-(*p >= (shift + 13) && *p <= (shift + 25)))
+int j = 0;
+for (j = 0; j < 52; j++)
 {
-*p += 13;
+if (str[i] == aa[j])
+{
+str[i] = bb[j];
+break;
 }
-p++;
 }
-return str;
+
+i++;
+}
+
+return (str);
 }
 
